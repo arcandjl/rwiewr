@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 3 Setting up an evaluation | Real World Impact Evaluation with R</title>
+  <meta name="description" content="Real world impact evaluation with R.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 3 Setting up an evaluation | Real World Impact Evaluation with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Real world impact evaluation with R." />
+  <meta name="github-repo" content="arcandjl/rwIEwr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Setting up an evaluation | Real World Impact Evaluation with R" />
+  
+  <meta name="twitter:description" content="Real world impact evaluation with R." />
+  
+
+<meta name="author" content="Department of International Economics">
+<meta name="author" content="The Graduate Institute | Geneva">
+<meta name="author" content="jean-louis.arcand@graduateinstitute.ch">
+
+
+<meta name="date" content="2019-01-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="randomization.html">
+<link rel="next" href="iv-and-rdd.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Real world impact evaluation with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="why-go-to-all-the-trouble-potential-outcomes.html"><a href="why-go-to-all-the-trouble-potential-outcomes.html"><i class="fa fa-check"></i><b>1</b> Why go to all the trouble? Potential outcomes</a></li>
+<li class="chapter" data-level="2" data-path="randomization.html"><a href="randomization.html"><i class="fa fa-check"></i><b>2</b> Randomization</a><ul>
+<li class="chapter" data-level="2.1" data-path="randomization.html"><a href="randomization.html#understanding-the-basics"><i class="fa fa-check"></i><b>2.1</b> Understanding the basics</a></li>
+<li class="chapter" data-level="2.2" data-path="randomization.html"><a href="randomization.html#the-randomista-debate"><i class="fa fa-check"></i><b>2.2</b> The randomista debate</a></li>
+<li class="chapter" data-level="2.3" data-path="randomization.html"><a href="randomization.html#bias-and-randomization-inference"><i class="fa fa-check"></i><b>2.3</b> Bias and randomization inference</a></li>
+<li class="chapter" data-level="2.4" data-path="randomization.html"><a href="randomization.html#placebo-effects-and-surprise-homo-oeconomicus-is-alive-and-kicking"><i class="fa fa-check"></i><b>2.4</b> Placebo effects and (surprise) homo oeconomicus is alive and kicking</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html"><i class="fa fa-check"></i><b>3</b> Setting up an evaluation</a><ul>
+<li class="chapter" data-level="3.1" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html#statistical-power-survey-data-and-just-doing-it"><i class="fa fa-check"></i><b>3.1</b> Statistical power, survey data and just doing it…</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html#blocking"><i class="fa fa-check"></i><b>3.1.1</b> Blocking</a></li>
+<li class="chapter" data-level="3.1.2" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html#repeated-observations"><i class="fa fa-check"></i><b>3.1.2</b> Repeated observations</a></li>
+<li class="chapter" data-level="3.1.3" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html#glossary-and-intuition"><i class="fa fa-check"></i><b>3.1.3</b> Glossary and intuition</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="setting-up-an-evaluation.html"><a href="setting-up-an-evaluation.html#stuff-to-keep-in-mind-survey-bias-and-hawthorne-effects"><i class="fa fa-check"></i><b>3.2</b> Stuff to keep in mind: Survey bias and Hawthorne effects</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="iv-and-rdd.html"><a href="iv-and-rdd.html"><i class="fa fa-check"></i><b>4</b> IV and RDD</a><ul>
+<li class="chapter" data-level="4.1" data-path="iv-and-rdd.html"><a href="iv-and-rdd.html#the-basics-of-iv"><i class="fa fa-check"></i><b>4.1</b> The basics of IV</a></li>
+<li class="chapter" data-level="4.2" data-path="iv-and-rdd.html"><a href="iv-and-rdd.html#finite-sample-bias-common-mistakes-the-gmm-black-box-and-bootstrap-inference"><i class="fa fa-check"></i><b>4.2</b> Finite sample bias, common mistakes, the GMM black box, and bootstrap inference</a></li>
+<li class="chapter" data-level="4.3" data-path="iv-and-rdd.html"><a href="iv-and-rdd.html#regression-discontinuity-design"><i class="fa fa-check"></i><b>4.3</b> Regression discontinuity design</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="panel-data-structures.html"><a href="panel-data-structures.html"><i class="fa fa-check"></i><b>5</b> Panel data structures</a><ul>
+<li class="chapter" data-level="5.1" data-path="panel-data-structures.html"><a href="panel-data-structures.html#reviewing-the-basics"><i class="fa fa-check"></i><b>5.1</b> Reviewing the basics</a></li>
+<li class="chapter" data-level="5.2" data-path="panel-data-structures.html"><a href="panel-data-structures.html#inference-and-clustering"><i class="fa fa-check"></i><b>5.2</b> Inference and clustering</a></li>
+<li class="chapter" data-level="5.3" data-path="panel-data-structures.html"><a href="panel-data-structures.html#measurement-error"><i class="fa fa-check"></i><b>5.3</b> Measurement error</a></li>
+<li class="chapter" data-level="5.4" data-path="panel-data-structures.html"><a href="panel-data-structures.html#pseudo-panel-data-and-synthetic-control"><i class="fa fa-check"></i><b>5.4</b> Pseudo-panel data and synthetic control</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="external-validity-replicability-and-lack-of-statistical-significance.html"><a href="external-validity-replicability-and-lack-of-statistical-significance.html"><i class="fa fa-check"></i><b>6</b> External validity, replicability and lack of statistical significance</a><ul>
+<li class="chapter" data-level="6.1" data-path="external-validity-replicability-and-lack-of-statistical-significance.html"><a href="external-validity-replicability-and-lack-of-statistical-significance.html#external-validity"><i class="fa fa-check"></i><b>6.1</b> External validity</a></li>
+<li class="chapter" data-level="6.2" data-path="external-validity-replicability-and-lack-of-statistical-significance.html"><a href="external-validity-replicability-and-lack-of-statistical-significance.html#replicability-and-scientific-progress"><i class="fa fa-check"></i><b>6.2</b> Replicability and scientific progress</a></li>
+<li class="chapter" data-level="6.3" data-path="external-validity-replicability-and-lack-of-statistical-significance.html"><a href="external-validity-replicability-and-lack-of-statistical-significance.html#saying-something-intelligent-when-things-arent-statistically-significant"><i class="fa fa-check"></i><b>6.3</b> Saying something intelligent when things aren’t statistically significant</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="heterogeneity-in-various-flavors.html"><a href="heterogeneity-in-various-flavors.html"><i class="fa fa-check"></i><b>7</b> Heterogeneity in various flavors</a><ul>
+<li class="chapter" data-level="7.1" data-path="heterogeneity-in-various-flavors.html"><a href="heterogeneity-in-various-flavors.html#quantile-regressions-and-random-coefficient-models"><i class="fa fa-check"></i><b>7.1</b> Quantile regressions and random coefficient models</a></li>
+<li class="chapter" data-level="7.2" data-path="heterogeneity-in-various-flavors.html"><a href="heterogeneity-in-various-flavors.html#essential-heterogeneity"><i class="fa fa-check"></i><b>7.2</b> Essential heterogeneity</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Real World Impact Evaluation with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="setting-up-an-evaluation" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Setting up an evaluation</h1>
+<p>We describe our methods in this chapter.</p>
+<div id="statistical-power-survey-data-and-just-doing-it" class="section level2">
+<h2><span class="header-section-number">3.1</span> Statistical power, survey data and just doing it…</h2>
+<p><span class="citation">Bloom (<a href="#ref-Bloom1995">1995</a>)</span> Optimal Design software: <a href="http://hlmsoft.net/od/" class="uri">http://hlmsoft.net/od/</a></p>
+<div id="blocking" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Blocking</h3>
+<p>Consider a simple RCT regression (<span class="math inline">\(i=1,...N\)</span>), with average treatment effect <span class="math inline">\(\gamma\)</span> and idiosyncractic treatment effects <span class="math inline">\(\theta_{i}\)</span>, <span class="math inline">\(E[\theta_{i}]=0\)</span>: <span class="math display">\[
+Y_{i}=X_{i}\eta+D_{i}\gamma+D_{i}\theta_{i}+\epsilon_{i}
+\]</span> Including covariates (<em>ex post</em>) or ``blocking&quot; (<em>ex ante</em>), will reduce <span class="math inline">\(\text{var}[U_{i}]\)</span> and therefore improve precision: <span class="math display">\[
+\text{var}[\widehat{\gamma}]=\frac{\text{var}[\epsilon_{i}]}{N\text{var}[D_{i}](1-R^{2}_{D|X})}=\frac{\text{var}[\epsilon_{i}]}{N\text{var}[D_{i}]}
+\]</span></p>
+</div>
+<div id="repeated-observations" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Repeated observations</h3>
+<p>Add a time dimension <span class="math inline">\(t\)</span>: <span class="math display">\[
+Y_{it}=X_{it}\eta+D_{it}\gamma+D_{it}\theta_{i}+\lambda_{i}+\epsilon_{it}
+\]</span> Gain in efficiency <strong>as long as</strong> <span class="math inline">\(\theta_{i}\perp\lambda_{i}\)</span> Standard panel data formula: <span class="math display">\[
+\text{var}[\widehat{\gamma}^{B}]-\text{var}[\widehat{\gamma}^{W}]=2N^{-1}\text{var}[\lambda_{i}]
+\]</span> Disadvantage of within-subject designs: treatment effects may be time-dependent (history / learning): <span class="math display">\[
+Y_{i2}=...+D_{i1}\gamma_{1}+D_{i2}\gamma_{2}+D_{i1}\theta_{i1}+D_{i2}\theta_{i2}...
+\]</span></p>
+</div>
+<div id="glossary-and-intuition" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Glossary and intuition</h3>
+<p><strong>Type I error</strong> (<span class="math inline">\(p-\)</span> value or significance level): probability of falsely rejecting the null hypothesis</p>
+<p><strong>Type II error</strong>: probability of falsely not rejecting the null hypothesis = <span class="math inline">\(1-\)</span> power</p>
+<p><strong>Power</strong>: probability of correctly rejecting the null</p>
+<p><strong>Effect size</strong>: the magnitude of the treatment effect that you want to be able to detect</p>
+<p><strong>Notation</strong>: <span class="math inline">\(Y_{ij}|X_{i}\sim N(\mu_{j},\sigma^{2}_{j}),j=0,1\)</span>; covariates <span class="math inline">\(X_{i}\)</span> have been “partialled out”</p>
+<p><strong>Intuition</strong>: <span class="math inline">\(\text{H}_0:\mu_{0}=\mu_{1}\ +\)</span> explicitly specify <span class="math inline">\(\text{H}_1:\mu_{0}-\mu_{1}=\delta=\)</span> <strong>Minimum Detectable Effect Size (MDES)</strong></p>
+<p><span class="citation">Deaton (<a href="#ref-Deaton97">1997</a>)</span> <span class="citation">List (<a href="#ref-List2011">2011</a>)</span> <span class="citation">Ranganathan (<a href="#ref-Ranganathan2015">2018</a>)</span></p>
+</div>
+</div>
+<div id="stuff-to-keep-in-mind-survey-bias-and-hawthorne-effects" class="section level2">
+<h2><span class="header-section-number">3.2</span> Stuff to keep in mind: Survey bias and Hawthorne effects</h2>
+<p><span class="citation">Zwane et al. (<a href="#ref-Zwane2011">2011</a>)</span> <span class="citation">Levitt and List (<a href="#ref-Levitt2011">2011</a>)</span></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Bloom1995">
+<p>Bloom, Howard S. 1995. “Minimum Detectable Effects: A Simple Way to Report the Statistical Power of Experimental Designs.” <em>Evaluation Review</em> 19 (5): 547–56.</p>
+</div>
+<div id="ref-Deaton97">
+<p>Deaton, Angus. 1997. <em>The Analysis of Household Surveys. a Microeconomic Approach to Development Policy</em>. Baltimore, MD: Johns Hopkins University Press.</p>
+</div>
+<div id="ref-List2011">
+<p>List, John A. 2011. “Why Economists Should Conduct Field Experiments and 14 Tips for Pulling One Off.” <em>Journal of Economic Perspectives</em> 25 (3): 3–16.</p>
+</div>
+<div id="ref-Ranganathan2015">
+<p>Ranganathan, Aruna. 2018. “The Artisan and His Audience: Identification with Work and Price-Setting in a Handicraft Cluster in Southern India.” <em>Administrative Science Quarterly</em> 63 (3): 637–67.</p>
+</div>
+<div id="ref-Zwane2011">
+<p>Zwane, Alix Peterson, Jonathan Zinman, Eric Van Dusene, William Pariente, Clair Null, Edward Miguel, Michael Kremer, et al. 2011. “Being Surveyed Can Change Later Behavior and Related Parameter Estimates.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 108 (5): 1821–6.</p>
+</div>
+<div id="ref-Levitt2011">
+<p>Levitt, Steven D., and John A. List. 2011. “Was There Really a Hawthorne Effect at the Hawthorne Plant? An Analysis of the Original Illumination Experiments.” <em>American Economic Journal: Applied Economics</em> 3 (1): 224–38.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="randomization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="iv-and-rdd.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
