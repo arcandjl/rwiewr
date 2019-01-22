@@ -1,19 +1,22 @@
 --- 
 title: "Real World Impact Evaluation with R"
-subtitle: 'Jean-Louis Arcand'  
-author: 
-- 'Department of International Economics'
-- 'The Graduate Institute | Geneva'
-- 'jean-louis.arcand@graduateinstitute.ch'
+author:
+- Department of International Economics
+- The Graduate Institute | Geneva
+- jean-louis.arcand@graduateinstitute.ch
 date: "2019-01-22"
-site: bookdown::bookdown_site
+output:
+  html_document:
+    df_print: paged
+description: Real world impact evaluation with R.
 documentclass: book
-bibliography: [my_refs.bib]
-biblio-style: apalike
-link-citations: yes
 github-repo: arcandjl/rwIEwr
-url: 
-description: "Real world impact evaluation with R."
+link-citations: yes
+bibliography: my_refs.bib
+site: bookdown::bookdown_site
+subtitle: Jean-Louis Arcand
+biblio-style: apalike
+url: null
 ---
 
 # Welcome to Real World Impact Evaluation with R {-}

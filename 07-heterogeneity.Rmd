@@ -332,6 +332,8 @@ abline(h=TUT, lty=1, col="red")
 # mte_se <- Y.np1$gerr*CS_dummy
 # ATE_se <- mean(mte_se, na.rm=TRUE)
 
+sessionInfo()
+
 ```
 
 # References {-}
