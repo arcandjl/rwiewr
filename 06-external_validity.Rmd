@@ -1,3 +1,10 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+```{r, echo=FALSE}
+rm(list=ls())
+```
 
 # External validity, replicability and lack of statistical significance
 

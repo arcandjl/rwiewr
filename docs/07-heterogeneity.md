@@ -1,3 +1,8 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+
 
 # Heterogeneity in various flavors
 
@@ -145,13 +150,13 @@ CS
 propensity.score.hist_1 <- hist(propensity.score_1, br=50)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 ```r
 propensity.score.hist_0 <- hist(propensity.score_0, br=50)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-2.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-2.png" width="672" />
 
 ```r
 plot(propensity.score.hist_1,main="Histograms of the distributions 
@@ -167,7 +172,7 @@ attach(heckman)
 library(AER)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-3.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-3.png" width="672" />
 
 ```r
 lineariv <- ivreg(Y ~ D | ps, data=heckman)
@@ -259,7 +264,7 @@ Y.ps2 <- lm(Y ~ ps + I(ps^2) + I(ps^3), data = heckman)
 cplot(Y.ps2, "ps", what = "effect", main = "Parametric MTE")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-4.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-4.png" width="672" />
 
 ```r
 # Nonparametric specification
@@ -300,7 +305,7 @@ summary(Y.np0)
 plot(Y.np0, plot.errors.method="bootstrap")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-5.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-5.png" width="672" />
 
 ```r
 plot(Y.np0, plot.errors.method="bootstrap", gradient=TRUE, 
@@ -311,7 +316,7 @@ ATE <- mean(mte, na.rm=TRUE)
 abline(h=ATE)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-6.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-6.png" width="672" />
 
 ```r
 mte_se <- Y.np0$gerr*CS_dummy
@@ -408,7 +413,7 @@ abline(h=TT, lty=1, col="blue")
 abline(h=TUT, lty=1, col="red")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-1-7.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-7.png" width="672" />
 
 
 
@@ -539,13 +544,13 @@ CS
 propensity.score.hist_1 <- hist(propensity.score_1, br=50)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ```r
 propensity.score.hist_0 <- hist(propensity.score_0, br=50)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-2.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-2.png" width="672" />
 
 ```r
 plot(propensity.score.hist_1,main="Histograms of the distributions 
@@ -553,7 +558,7 @@ of the propensity score, for D=1 and D=0",xlab="Propensity score P(Z)", col=adju
 lines(propensity.score.hist_0, lty=2, col=adjustcolor("red", 0.3))
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-3.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-3.png" width="672" />
 
 ```r
 ps <- propensity.score
@@ -654,7 +659,7 @@ Y.ps2 <- lm(Y ~ ps + I(ps^2) + I(ps^3), data = heckman)
 cplot(Y.ps2, "ps", what = "effect", main = "Parametric MTE")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-4.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-4.png" width="672" />
 
 ```r
 # Nonparametric specification
@@ -694,7 +699,7 @@ summary(Y.np0)
 plot(Y.np0, plot.errors.method="asymptotic")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-5.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-5.png" width="672" />
 
 ```r
 plot(Y.np0, plot.errors.method="asymptotic", gradient=TRUE, 
@@ -705,7 +710,7 @@ ATE <- mean(mte, na.rm=TRUE)
 abline(h=ATE)
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-6.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-6.png" width="672" />
 
 ```r
 mte_se <- Y.np0$gerr*CS_dummy
@@ -802,7 +807,7 @@ abline(h=TT, lty=1, col="blue")
 abline(h=TUT, lty=1, col="red")
 ```
 
-<img src="07-heterogeneity_files/figure-html/unnamed-chunk-2-7.png" width="672" />
+<img src="07-heterogeneity_files/figure-html/unnamed-chunk-3-7.png" width="672" />
 
 ```r
 # Can also use a more sophisticated Li and Racine bandwidth estimation
@@ -821,4 +826,4 @@ abline(h=TUT, lty=1, col="red")
 # ATE_se <- mean(mte_se, na.rm=TRUE)
 ```
 
-
+# References {-}

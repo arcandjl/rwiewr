@@ -1,3 +1,8 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+
 
 # Randomization
 

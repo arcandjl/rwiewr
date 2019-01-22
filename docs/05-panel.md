@@ -1,3 +1,7 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
 
 
 # Panel data structures

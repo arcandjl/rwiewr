@@ -26,7 +26,7 @@ This is the [online version](https://csgillespie.github.io/efficientR/) of the O
 
 ## Author {-}
 
-[Jean-Louis Arcand](http://www.graduateinstitute.ch) is 
+[Jean-Louis Arcand](http://www.graduateinstitute.ch) is Professor and Chair of the Department of International Economics at the Graduate Institute in Geneva.
 
 # Preface {-}
 

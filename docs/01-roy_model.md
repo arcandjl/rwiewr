@@ -1,3 +1,7 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
 
 
 # Why go to all the trouble? Potential outcomes

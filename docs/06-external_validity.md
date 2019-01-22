@@ -1,3 +1,8 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+
 
 # External validity, replicability and lack of statistical significance
 

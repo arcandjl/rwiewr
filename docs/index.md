@@ -16,6 +16,18 @@ url:
 description: "Real world impact evaluation with R."
 ---
 
+# Welcome to Real World Impact Evaluation with R {-}
+
+<!-- ```{r echo=FALSE, out.width="33%"} -->
+<!-- knitr::include_graphics("figures/f0_web.png") -->
+<!-- ``` -->
+
+This is the [online version](https://csgillespie.github.io/efficientR/) of the O'Reilly book: [Efficient R programming](http://shop.oreilly.com/product/0636920047995.do). Pull requests and general comments are welcome.
+
+## Author {-}
+
+[Jean-Louis Arcand](http://www.graduateinstitute.ch) is Professor and Chair of the Department of International Economics at the Graduate Institute in Geneva.
+
 # Preface {-}
 
 Statistically assessing the causal impact of development policies has now become an extremely large industry. While there will always be five available identification strategies, doing things right in a policy-relevant manner is neither obvious, nor easy.[^1]  And the tendency to evaluate stuff simply because it is possible to do so rigorously --instead of trying to evaluate what deserves to be evaluated from the development perspective, has sometimes led to what I\ call the ``tail wagging the dog'' syndrome.

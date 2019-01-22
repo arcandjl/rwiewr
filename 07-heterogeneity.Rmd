@@ -1,3 +1,10 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+```{r, echo=FALSE}
+rm(list=ls())
+```
 
 # Heterogeneity in various flavors
 
@@ -327,4 +334,4 @@ abline(h=TUT, lty=1, col="red")
 
 ```
 
-
+# References {-}

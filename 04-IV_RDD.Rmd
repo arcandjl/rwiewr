@@ -1,3 +1,10 @@
+---
+knit: "bookdown::preview_chapter"
+---
+
+```{r, echo=FALSE}
+rm(list=ls())
+```
 
 # IV and RDD
 
