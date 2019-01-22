@@ -1,0 +1,85 @@
+
+# Randomization
+
+Here is a review of existing methods.
+
+## Understanding the basics
+
+Let us write a very simple data-generating process (DGP) for a trivial RCT.
+
+```{r chunk-rct11, warning = FALSE, message = FALSE}
+
+library(mvtnorm)
+set.seed(2001)
+beta <- 0.5
+sigma <- matrix(c(1.0,0.0,
+                  0.0,1.0),ncol=2)
+
+## Generate residuals and variables
+N <- 20
+m <- rmvnorm(N,mean=c(0,0),sigma=sigma)
+
+## Write down the DGP:
+Dstar <- m[,1]
+D <- ifelse(Dstar>0,1,0)
+Y <- beta*D + m[,2]
+data <- data.frame(cbind(D,Y))
+head(data)
+```
+
+The standard way of doing the impact evaluation is then simply a comparison of means, which boils down to an OLS regression.
+
+```{r chunk-rct12, warning = FALSE, message = FALSE}
+summary(lm(Y ~ D))
+```
+
+@Heckman96
+
+
+## The randomista debate
+
+@Deaton2010 
+@Imbens10 
+@Barrett2010 
+@Ravallion2012 
+@Deaton2016
+@Ravallion2018
+
+## Bias and randomization inference
+
+@Young2016a
+
+The basic idea behind randomization inference is to do all of the permutations of treatment status `D`.
+We can do this with the `mosaic` package.
+
+```{r chunk-rct13, warning = FALSE, message = FALSE}
+
+# How many unique permutations are there of treatment?
+2^20
+
+library(mosaic)
+obsdiff = with(data, mean(Y[D==1]) - mean(Y[D==0]))
+obsdiff
+numsim = 1000
+res = do(numsim) * lm(Y ~ shuffle(D), data=data)
+pvalue = sum(abs(res$D) > abs(obsdiff)) / numsim
+histogram(~ res$D, group = abs(res$D) > abs(obsdiff), 
+          n=20, density=FALSE, data=res, xlab="difference between groups",
+          main=paste("Permutation test: p=", pvalue))
+```
+
+Now do it properly using the `coin` package
+
+```{r chunk-rct14}
+library(coin)
+oneway_test(Y ~ as.factor(D), alternative = "two.sided", data=data, distribution = "exact")
+```
+
+You should also read @Eble2017 and @Athey2016
+
+## Placebo effects and (surprise) homo oeconomicus is alive and kicking
+
+@Malani2006
+@Bulte2014
+@Chassang2012
+@Wing2016

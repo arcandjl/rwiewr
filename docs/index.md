@@ -1,15 +1,19 @@
 --- 
-title: "A Minimal Bookdown Book"
-author: "Sean Kross"
-date: "2016-12-09"
+title: "Real World Impact Evaluation with R"
+subtitle: 'Jean-Louis Arcand'  
+author: 
+- 'Department of International Economics'
+- 'The Graduate Institute | Geneva'
+- 'jean-louis.arcand@graduateinstitute.ch'
+date: "2019-01-22"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib]
+bibliography: [my_refs.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: seankross/bookdown-start
-url: 'http\://seankross.com/bookdown-start/'
-description: "Everything you need (and nothing more) to start a bookdown book."
+github-repo: arcandjl/rwIEwr
+url: 
+description: "Real world impact evaluation with R."
 ---
 
 # Preface {-}
