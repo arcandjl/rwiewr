@@ -4,10 +4,12 @@ author:
 - Department of International Economics
 - The Graduate Institute | Geneva
 - jean-louis.arcand@graduateinstitute.ch
-date: "2019-01-22"
+date: "2019-01-25"
 output:
   html_document:
     df_print: paged
+    toc: yes
+    toc_depth: 3
 description: Real world impact evaluation with R.
 documentclass: book
 github-repo: arcandjl/rwIEwr
@@ -33,7 +35,7 @@ This is the [online version](https://csgillespie.github.io/efficientR/) of the O
 
 # Preface {-}
 
-Statistically assessing the causal impact of development policies has now become an extremely large industry. While there will always be five available identification strategies, doing things right in a policy-relevant manner is neither obvious, nor easy.[^1]  And the tendency to evaluate stuff simply because it is possible to do so rigorously --instead of trying to evaluate what deserves to be evaluated from the development perspective, has sometimes led to what I\ call the ``tail wagging the dog'' syndrome.
+Statistically assessing the causal impact of development policies has now become an extremely large industry. While there will always be five available identification strategies, doing things right in a policy-relevant manner is neither obvious, nor easy.[^1]  And the tendency to evaluate stuff simply because it is possible to do so rigorously --instead of trying to evaluate what deserves to be evaluated from the development perspective, has sometimes led to what I call the ``tail wagging the dog'' syndrome.
  There is also the minor issue of scientific progress and actually accumulating a useful body of knowledge.
  
 [^1]: In case you're wondering, the five identification strategies are: (i) wishing the problem away by assuming selection on observables and applying either OLS or some type of  matching estimator (I will have little if anything to say about this in what follows), (ii) randomization, (iii) instrumental variables, (iv) regression discontinuity design and (v) some sort of covariance transformation that you can implement because you are lucky enough to have panel data.  Convex combinations of these are, of course, very common as well.

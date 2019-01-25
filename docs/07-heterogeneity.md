@@ -829,7 +829,7 @@ sessionInfo()
 ```
 
 ```
-## R version 3.5.1 (2018-07-02)
+## R version 3.5.2 (2018-12-20)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 17134)
 ## 
@@ -846,24 +846,24 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] np_0.60-9       margins_0.3.23  AER_1.2-6       survival_2.42-3
+## [1] np_0.60-9       margins_0.3.23  AER_1.2-6       survival_2.43-3
 ## [5] sandwich_2.5-0  lmtest_0.9-36   zoo_1.8-4       car_3.0-2      
 ## [9] carData_3.0-2  
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] zip_1.0.0          Rcpp_1.0.0         pillar_1.3.1      
-##  [4] compiler_3.5.1     cellranger_1.1.0   forcats_0.3.0     
-##  [7] tools_3.5.1        boot_1.3-20        digest_0.6.18     
-## [10] evaluate_0.12      tibble_2.0.1       lattice_0.20-35   
-## [13] pkgconfig_2.0.2    rlang_0.3.1        Matrix_1.2-14     
+##  [4] compiler_3.5.2     cellranger_1.1.0   forcats_0.3.0     
+##  [7] tools_3.5.2        boot_1.3-20        digest_0.6.18     
+## [10] evaluate_0.12      tibble_2.0.1       lattice_0.20-38   
+## [13] pkgconfig_2.0.2    rlang_0.3.1        Matrix_1.2-15     
 ## [16] openxlsx_4.1.0     curl_3.3           yaml_2.2.0        
 ## [19] SparseM_1.77       haven_2.0.0        xfun_0.4          
 ## [22] rio_0.5.16         stringr_1.3.1      knitr_1.21        
-## [25] MatrixModels_0.4-1 hms_0.4.2          grid_3.5.1        
+## [25] MatrixModels_0.4-1 hms_0.4.2          grid_3.5.2        
 ## [28] data.table_1.12.0  readxl_1.2.0       prediction_0.3.6.1
-## [31] foreign_0.8-70     rmarkdown_1.11     bookdown_0.9      
+## [31] foreign_0.8-71     rmarkdown_1.11     bookdown_0.9      
 ## [34] Formula_1.2-3      magrittr_1.5       MASS_7.3-51.1     
-## [37] htmltools_0.3.6    splines_3.5.1      abind_1.4-5       
+## [37] htmltools_0.3.6    splines_3.5.2      abind_1.4-5       
 ## [40] cubature_2.0.3     quadprog_1.5-5     quantreg_5.38     
 ## [43] stringi_1.2.4      crayon_1.3.4
 ```

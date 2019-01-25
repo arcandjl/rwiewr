@@ -6,7 +6,10 @@ knit: "bookdown::preview_chapter"
 
 # Why go to all the trouble? Potential outcomes
 
+## Why evaluate
 @Ravallion2009
+
+## The Roy model
 
 @Heckman05a
 
