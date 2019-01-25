@@ -205,14 +205,20 @@ haz.clustered.se
 ### Multidimensional panels
 
 USE EXAMPLE FROM THE BURUNDI PAPER
+
+Household, field, plot
+
 USE EXAMPLE FROM A UNIDO DATA PAPER
 
-USE THE xxxx PACKAGE
+Country, year, sector
 
+USE THE xxxx PACKAGE
 
 ### Mundlak
 
 @Mundlak1978
+
+Illustrate the general principal of doing random effects and including individual specific means of the covariates in a two-dimensional panel setup
 
 ### The incidental parameters problem
 
@@ -360,6 +366,8 @@ USE MATERIAL FROM SECOND CHINA BEAUTY PAPER
 ## Time-invariant covariates
 
 @Hausman81
+
+ADD A MONTECARLO SIMULATION HERE
 
 Suppose, however, that you also want to simultaneously identify (i) the impact on WAZ of whether the child is female (FEMALE) and (ii) whether the impact of treatment by the PNIR differs according to the gender of the child. How would you go about doing this, and what do you find?
 

@@ -58,3 +58,6 @@ There is a plethora of websites dedicated to impact evaluation-related topics th
 - http://www.worldbank.org/en/research/dime
 
 Plus my favorite statistics blog: http://andrewgelman.com/
+
+When you are learning to code in `R` (and even once you are comfortable with it) it is often useful to have a handy reference.  This provided by the cheatsheets available at: https://www.rstudio.com/resources/cheatsheets/
+
